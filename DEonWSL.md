@@ -65,6 +65,21 @@ export DISPLAY=127.0.0.1:0.0
 
 startxfce4
 
+## XFCE 4 (WSL 2)
+
+sudo apt install xfce4 xfce4-goodies
+
+export DISPLAY=127.0.0.1:0.0
+
+export XDG\_SESSION\_TYPE=x11
+
+export GDK\_BACKEND=x11
+
+unset WAYLAND\_DISPLAY
+
+startxfce4
+
+
 
 
 
