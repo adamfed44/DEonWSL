@@ -4,6 +4,10 @@ EVERYTHING TESTED ONLY IN UBUNTU 24.04 LTS AND MOSTLY WSL 2
 
 Before doing anything, install WSL and VcXsrv or Xming (doesnt matter which), then start it.
 
+Make a new WSL profile (replace the "ReplaceThis" with your own name you want):
+
+wsl --install --distribution Ubuntu-24.04 --name ReplaceThis --version 2
+
 Before installing ANY desktop enviroment, first do:
 
 sudo apt update
@@ -31,11 +35,13 @@ sudo apt install gnome-session gnome-software gnome-terminal nautilus gnome-cont
 
 export DISPLAY=127.0.0.1:0.0
 
-export XDG\_SESSION\_TYPE=x11
+export XDG_SESSION_TYPE=x11
 
-export GDK\_BACKEND=x11
+export GDK_BACKEND=x11
 
-unset WAYLAND\_DISPLAY
+unset WAYLAND_DISPLAY
+
+Starting Gnome:
 
 gnome-session
 
@@ -45,9 +51,11 @@ sudo apt install kde-standard
 
 export DISPLAY=127.0.0.1:0.0
 
-export LIBGL\_ALWAYS\_SOFTWARE=1
+export LIBGL_ALWAYS_SOFTWARE=1
 
-export GALLIUM\_DRIVER=llvmpipe
+export GALLIUM_DRIVER=llvmpipe
+
+Starting KDE Plasma:
 
 dbus-launch --exit-with-session startplasma-x11
 
@@ -69,6 +77,8 @@ sudo apt install xfce4 xfce4-goodies
 
 export DISPLAY=127.0.0.1:0.0
 
+Starting XFCE 4:
+
 startxfce4
 
 ## XFCE 4 (WSL 2)
@@ -77,29 +87,46 @@ sudo apt install xfce4 xfce4-goodies
 
 export DISPLAY=127.0.0.1:0.0
 
-export XDG\_SESSION\_TYPE=x11
+export XDG_SESSION_TYPE=x11
 
-export GDK\_BACKEND=x11
+export GDK_BACKEND=x11
 
-unset WAYLAND\_DISPLAY
+unset WAYLAND_DISPLAY
+
+Starting XFCE 4:
 
 startxfce4
 
-## LXDE (not the best)
+## LXDE (works, but has error when booting)
 
 sudo apt install lxde
 
 export DISPLAY=127.0.0.1:0.0
 
-export XDG\_SESSION\_TYPE=x11
+export XDG_SESSION_TYPE=x11
 
-export GDK\_BACKEND=x11
+export GDK_BACKEND=x11
 
-unset WAYLAND\_DISPLAY
+unset WAYLAND_DISPLAY
+
+Starting LXDE:
 
 dbus_launch --exit-with-session startlxde
 
+## Cinnamon
 
+sudo apt install cinnamon-desktop-enviroment
 
+export DISPLAY=127.0.0.1:0.0
 
+export XDG_CURRENT_DESKTOP=X-Cinnamon
 
+export XDG_SESSION_TYPE=x11
+
+Starting Cinnamon:
+
+dbus-run-session -- cinnamon-session
+
+## MATE (not possible)
+
+sudo apt install ubuntu-mate-desktop
