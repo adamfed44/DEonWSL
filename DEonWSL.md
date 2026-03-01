@@ -1,4 +1,16 @@
-# Gnome
+# DEonWSL
+
+EVERYTHING TESTED ONLY IN UBUNTU 24.04 LTS
+
+Before installing ANY desktop enviroment, first do:
+
+sudo apt update
+
+Then pick the DE you want.
+
+## Gnome
+
+sudo apt install gnome-session gnome-software gnome-terminal nautilus gnome-control-center
 
 export DISPLAY=127.0.0.1:0.0
 
@@ -10,7 +22,9 @@ unset WAYLAND\_DISPLAY
 
 gnome-session
 
-# KDE Plasma
+## KDE Plasma
+
+sudo apt install kde-standard
 
 export DISPLAY=127.0.0.1:0.0
 
@@ -30,7 +44,9 @@ kquitapp5 plasmashell \&\& kstart5 plasmashell > /dev/null 2>\&1 \&
 
 Press Alt-Shift-F12 to disable animations
 
-# XFCE 4 (WSL 1)
+## XFCE 4 (WSL 1)
+
+sudo apt install xfce4 xfce4-goodies
 
 export DISPLAY=127.0.0.1:0.0
 
