@@ -6,6 +6,19 @@ Before installing ANY desktop enviroment, first do:
 
 sudo apt update
 
+Then copy this config to C:\Users\[yourusername]\.wslconfig
+
+
+[wsl2]
+networkingMode=mirrored
+
+dnsTunneling=true
+
+autoProxy=true
+
+localhostForwarding=true
+
+
 Then pick the DE you want.
 
 ## Gnome
@@ -51,6 +64,7 @@ sudo apt install xfce4 xfce4-goodies
 export DISPLAY=127.0.0.1:0.0
 
 startxfce4
+
 
 
 
